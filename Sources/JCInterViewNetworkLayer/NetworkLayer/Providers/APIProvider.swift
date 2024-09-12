@@ -7,11 +7,11 @@
 
 import Foundation
 
-class APIProvider {
+public class APIProvider {
     static let shared = APIProvider()
     private init() {}
     
-    func performRequest<T: Codable>(endPoint: Endpoints, completion: @escaping (Swift.Result<T, NetworkError>) -> Void) {
+    public func performRequest<T: Codable>(endPoint: Endpoints, completion: @escaping (Swift.Result<T, NetworkError>) -> Void) {
 
         let request = RequestBuilder.buildRequest(for: endPoint)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
