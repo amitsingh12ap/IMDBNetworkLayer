@@ -8,7 +8,7 @@
 import Foundation
 
 public class APIProvider {
-    static let shared = APIProvider()
+    public static let shared = APIProvider()
     private init() {}
     
     public func performRequest<T: Codable>(endPoint: Endpoints, completion: @escaping (Swift.Result<T, NetworkError>) -> Void) {
